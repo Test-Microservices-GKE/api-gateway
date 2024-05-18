@@ -1,18 +1,15 @@
+server:
+  port: 8080
+
 spring:
-  application:
-    name: api-gateway
   cloud:
     gateway:
       routes:
-        - id: service-1
-          uri: http://service1:8080
+        - id: video-service
+          uri: http://video-service
           predicates:
-            - Path=/service1/**
-        - id: service-2
-          uri: http://service2:8080
+            - Path=/video/**
+        - id: comment-service
+          uri: http://comment-service
           predicates:
-            - Path=/service2/**
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka-server:8761/eureka/
+            - Path=/comment/**
