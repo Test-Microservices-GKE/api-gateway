@@ -1,15 +1,24 @@
-server:
-  port: 8080
+# server:
+#   port: 8080
+
+# spring:
+#   cloud:
+#     gateway:
+#       routes:
+#         - id: video-service
+#           uri: http://video-service
+#           predicates:
+#             - Path=/video/**
+#         - id: comment-service
+#           uri: http://comment-service
+#           predicates:
+#             - Path=/comment/**
 
 spring:
   cloud:
     gateway:
       routes:
-        - id: video-service
-          uri: http://video-service
-          predicates:
-            - Path=/video/**
-        - id: comment-service
-          uri: http://comment-service
+        - id: comment_service
+          uri: http://comment-service:8082
           predicates:
             - Path=/comment/**
