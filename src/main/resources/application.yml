@@ -3,16 +3,14 @@ spring:
     gateway:
       routes:
         - id: comment_service
-          # uri: http://localhost:8082
-          uri: http://34.118.237.210:8082
-
+          uri: http://localhost:8082
           predicates:
             - Path=/comment/**
   application:
     name: api-gateway
   web:
     cors:
-      allowed-origins: "*"
+      allowed-origins: "http://localhost:3000" # Explicitly allow your front-end origin
       allowed-methods: "*"
       allowed-headers: "*"
       allow-credentials: true
