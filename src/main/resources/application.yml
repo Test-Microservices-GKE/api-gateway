@@ -1,9 +1,12 @@
+server:
+  port: 8080
+
 spring:
   cloud:
     gateway:
       routes:
         - id: comment-service
-          uri: http://comment-service:8080
+          uri: http://comment-service:8082
           predicates:
             - Path=/comment/**
   application:
