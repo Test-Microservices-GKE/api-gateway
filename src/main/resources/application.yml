@@ -3,11 +3,8 @@ spring:
     gateway:
       routes:
         - id: comment-service
-          uri: http://34.118.236.190
-          # uri: http://localhost:8082
-
+          uri: http://comment-service:8080
           predicates:
             - Path=/comment/**
   application:
     name: api-gateway
-
