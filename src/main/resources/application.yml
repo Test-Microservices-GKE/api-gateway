@@ -3,7 +3,7 @@ spring:
     gateway:
       routes:
         - id: comment_service
-          uri: http://34.118.237.49:8082
+          uri: http://34.118.236.190
           predicates:
             - Path=/comment/**
   application:
