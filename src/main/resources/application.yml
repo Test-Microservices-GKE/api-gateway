@@ -2,8 +2,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: comment_service
+        - id: comment-service
           uri: http://34.118.236.190
+          # uri: http://localhost:8082
+
           predicates:
             - Path=/comment/**
   application:
