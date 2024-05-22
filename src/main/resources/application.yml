@@ -2,19 +2,15 @@ server:
   port: 8080
 
 spring:
+  application:
+    name: api-gateway
+
+# Định nghĩa routing cho các service khác
+spring:
   cloud:
     gateway:
       routes:
       - id: comment-service
         uri: http://comment-service:8082
-        # uri: http://localhost:8082
         predicates:
-        - Path=/comment/**
-        # filters:
-        # - StripPrefix=1
-
-      - id: react-frontend
-        uri: http://react-frontend:3000
-        # uri: http://localhost:3000
-        predicates:
-        - Path=/**
+        - Path=/comments/**
