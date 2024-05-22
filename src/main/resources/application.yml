@@ -1,10 +1,5 @@
 server:
   port: 8080
-
-spring:
-  application:
-    name: api-gateway
-
 # Định nghĩa routing cho các service khác
 spring:
   cloud:
