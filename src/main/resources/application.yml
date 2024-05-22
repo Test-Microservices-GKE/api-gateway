@@ -7,5 +7,7 @@ spring:
       routes:
       - id: comment-service
         uri: http://comment-service:8082
+        # uri: http://localhost:8082
+
         predicates:
         - Path=/comment/**
