@@ -13,6 +13,6 @@ spring:
         - StripPrefix=1
 
       - id: react-frontend
-        uri: http://react-frontend:80
+        uri: http://react-frontend:3000
         predicates:
         - Path=/**
