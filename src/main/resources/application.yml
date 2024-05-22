@@ -7,12 +7,14 @@ spring:
       routes:
       - id: comment-service
         uri: http://comment-service:8082
+        # uri: http://localhost:8082
         predicates:
-        - Path=/comments/**
-        filters:
-        - StripPrefix=1
+        - Path=/comment/**
+        # filters:
+        # - StripPrefix=1
 
       - id: react-frontend
         uri: http://react-frontend:3000
+        # uri: http://localhost:3000
         predicates:
         - Path=/**
