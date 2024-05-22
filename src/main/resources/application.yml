@@ -1,6 +1,16 @@
 server:
-  port: 8082
+  port: 8080
 
 spring:
   application:
-    name: comment-service
+    name: api-gateway
+
+# API Gateway routes configuration
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: comment-service
+          uri: http://comment-service:8082
+          predicates:
+            - Path=/comment/**
