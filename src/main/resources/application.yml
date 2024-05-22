@@ -8,4 +8,4 @@ spring:
       - id: comment-service
         uri: http://comment-service:8082
         predicates:
-        - Path=/comments/**
+        - Path=/comment/**
