@@ -5,9 +5,14 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: comment-service
-          uri: http://comment-service:8082
-          predicates:
-            - Path=/comment/**
-  application:
-    name: api-gateway
+      - id: comment-service
+        uri: http://comment-service:8082
+        predicates:
+        - Path=/comments/**
+        filters:
+        - StripPrefix=1
+
+      - id: react-frontend
+        uri: http://react-frontend:80
+        predicates:
+        - Path=/**
