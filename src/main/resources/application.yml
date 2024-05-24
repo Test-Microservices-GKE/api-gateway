@@ -1,12 +1,10 @@
 server:
   port: 8080
 
+# API Gateway routes configuration
 spring:
   application:
     name: api-gateway
-
-# API Gateway routes configuration
-spring:
   cloud:
     gateway:
       routes:
@@ -14,3 +12,7 @@ spring:
           uri: http://comment-service:8082
           predicates:
             - Path=/comment/**
+        - id: video-service
+          uri: http://video-service:8083
+          predicates:
+            - Path=/video/**
